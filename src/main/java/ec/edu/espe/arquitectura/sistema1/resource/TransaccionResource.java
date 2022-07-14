@@ -19,7 +19,7 @@ public class TransaccionResource {
   public ResponseEntity<Transaccion> create(@RequestBody Transaccion transaccion) {
     try {
       Transaccion crearTransaccion = service.transferir(transaccion);
-      return ResponseEntity.ok().build();
+      return ResponseEntity.ok(crearTransaccion);
 
     } catch (Exception e) {
       return ResponseEntity.notFound().build();
